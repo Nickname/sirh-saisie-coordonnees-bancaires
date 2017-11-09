@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SGP App</title>
+  <script type="text/javascript" src="/lib/jquery-3.2.1/jquery-3.2.1.js"></script>
+  <link rel="stylesheet" href="/lib/bootstrap-4.0.0/css/bootstrap.min.css">
+  <script type="text/javascript" src="/lib/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/js/request.js"></script>
+</head>
+<body>
+  <div class="container">
+
+    <h1 class="display-4">SGP - Gestion de personnel</h1>
+
+    <div class="container" id="filtre">
+      <div class="form-group">
+        <label for="filtre_dep">Filtre par département</label>
+        <select class="form-control" id="filtre_dep">
+          <option value="ALL">Tous</option>
+          <option value="INFO">Informatique</option>
+          <option value="RH">Ressources Humaines</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="filtre_nom">Recherche par nom</label>
+        <input type="password" class="form-control" id="filtre_nom" placeholder="Nom">
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="container-fluid col-6">
+        <table class="table table-hover table-bordered">
+          <thead class="thead-light">
+            <tr>
+              <td>Matricule</td>
+              <td>Nom</td>
+              <td>Prénom</td>
+            </tr>
+          </thead>
+          <tbody id="collabo_list">
+
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container-fluid col-6" id="compte_bancaire">
+        <input type="hidden" id="matricule_collabo"/>
+        <label for="nom_banque">Banque</label>
+        <input type="text" class="form-control" id="nom_banque">
+        <label for="bic">BIC</label>
+        <input type="text" class="form-control" id="bic">
+        <label for="iban">IBAN</label>
+        <input type="text" class="form-control" id="iban">
+        <input type="submit" onclick="updateCompte" value="Sauvegarder"/>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+</html>
